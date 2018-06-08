@@ -22,10 +22,10 @@ public class StockController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<StockDTO> recordStock(@RequestBody StockDTO stockDTO) {
-        try{
+        try {
             StockDTO resultStock = stockService.recordStock(stockDTO);
             return new ResponseEntity<>(resultStock, HttpStatus.OK);
-        }catch(Exception e){
+        } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
